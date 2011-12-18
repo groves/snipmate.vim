@@ -1,0 +1,50 @@
+snippet for
+	for (${1} in ${2}) {
+		${4}
+	}
+snippet fore
+	for each (${1} in ${2}) {
+		${3}
+	}
+snippet log
+	private static const log :Log = Log.getLog(`Filename()`);
+snippet warn
+	log.warning("${1:}"${2});
+snippet info
+	log.info("${1:}"${2});
+snippet fun
+	${1:public} function ${2:name} (${3}) :${4:void}
+	{
+		${5}
+	}
+snippet afun
+	function (${1:..._}) :${2:void} { ${3} });
+snippet field
+	protected var ${1:name} :${2:type}${3};
+snippet inject
+	protected const _${1:name} :${2:type} = inject($2);${3}
+snippet var
+	var ${1:name} :${2:type} = $3;
+snippet newvar
+	var ${1:name} :${2:type} = new $2(${3});
+snippet out
+	trace("${1:msg}");
+snippet getter
+	function get ${1:} () :${2} {
+		return _$1;
+	}
+snippet setter
+	function set ${1:} ($1 :${2:}) :void {
+		_$1 = $1;
+	}
+snippet accessor
+	public function get ${1:} () :${2:} {
+		return _$1;
+	}
+
+	public function set $1 ($1 :$2) :void {
+		_$1 = $1;
+	}
+
+	protected var _$1 :$2;
+
