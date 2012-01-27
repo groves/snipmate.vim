@@ -1,9 +1,9 @@
 snippet for
-	for (${1} in ${2}) {
-		${4}
+	for (${1:} in ${2:}) {
+		${3}
 	}
 snippet fore
-	for each (${1} in ${2}) {
+	for each (${1:} in ${2:}) {
 		${3}
 	}
 snippet log
@@ -13,14 +13,13 @@ snippet warn
 snippet info
 	log.info("${1:}"${2});
 snippet fun
-	${1:public} function ${2:name} (${3}) :${4:void}
-	{
+	${1:public} function ${2:name} (${3}) :${4:void} {
 		${5}
 	}
 snippet afun
 	function (${1:..._}) :${2:void} { ${3} });
 snippet field
-	protected var ${1:name} :${2:type}${3};
+	${1:protected} var ${2:name} :${3:type}${4};
 snippet inject
 	protected const _${1:name} :${2:type} = inject($2);${3}
 snippet var
@@ -28,23 +27,8 @@ snippet var
 snippet newvar
 	var ${1:name} :${2:type} = new $2(${3});
 snippet out
-	trace("${1:msg}");
+	trace("${1:`Filename()`}" + ${2:});
 snippet getter
-	function get ${1:} () :${2} {
-		return _$1;
-	}
+	function get ${1:} () :${2} { return _$1; }
 snippet setter
-	function set ${1:} ($1 :${2:}) :void {
-		_$1 = $1;
-	}
-snippet accessor
-	public function get ${1:} () :${2:} {
-		return _$1;
-	}
-
-	public function set $1 ($1 :$2) :void {
-		_$1 = $1;
-	}
-
-	protected var _$1 :$2;
-
+	function set ${1:} ($1 :${2:}) :void { _$1 = $1; }
